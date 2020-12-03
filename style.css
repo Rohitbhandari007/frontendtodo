@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Flamenco&family=Montserrat&display=swap");
+
+:root {
+  --flamenco: "Flamenco", cursive;
+  --monst: "Montserrat", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+ul {
+  padding: 10px;
+  list-style: none;
+  border-bottom: 1px solid gray;
+}
+li {
+  padding: 10px;
+}
+body {
+  background: #222;
+  font-family: var(--monst);
+  color: white;
+  overflow-x: hidden;
+}
+.main {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+.tasks {
+  width: 80%;
+  padding: 10px;
+}
+.sidebar {
+  width: 20%;
+  height: 100vh;
+  padding: 10px;
+  background: #333;
+  border-right: 1px solid #111;
+}
+.addtaskbtn {
+  position: fixed;
+  padding: 8px 22px;
+  margin-top: 550px;
+  right: 70px;
+  font-weight: 800;
+  font-size: 30px;
+  border-radius: 50%;
+  background: #333;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.addtaskbtn:hover {
+  background: gray;
+}
