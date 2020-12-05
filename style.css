@@ -4,45 +4,34 @@
   --flamenco: "Flamenco", cursive;
   --monst: "Montserrat", sans-serif;
 }
-* {
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-}
-ul {
-  padding: 10px;
-  list-style: none;
-  border-bottom: 1px solid gray;
-}
-li {
-  padding: 10px;
-}
 body {
-  background: #222;
+  margin: 0;
   font-family: var(--monst);
-  color: white;
-  overflow-x: hidden;
+  background: #222;
+
+  color: snow;
 }
-.main {
-  display: flex;
-  width: 100%;
-  position: relative;
-}
-.tasks {
-  width: 80%;
-  padding: 10px;
-}
+
 .sidebar {
-  width: 20%;
-  height: 100vh;
-  padding: 10px;
-  background: #333;
-  border-right: 1px solid #111;
+
+  color: white;
+  width: 250px;
+  background-color: #333;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
 }
 .addtaskbtn {
   position: fixed;
   padding: 8px 22px;
-  margin-top: 550px;
+  bottom:50px;
   right: 70px;
   font-weight: 800;
   font-size: 30px;
@@ -51,6 +40,79 @@ body {
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
+
 .addtaskbtn:hover {
   background: gray;
+}
+ 
+.sidebar a.active {
+  background-color: gray;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 10px 16px;
+  
+}
+.heading{
+  display: none;
+}
+.down{
+  border-bottom: 1px solid gray;
+}
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .down{
+  border-bottom:none;
+}
+  .todos{
+    display: none;
+  }
+  .sidebar a {
+    float: left;
+
+  }
+  div.content {
+    margin-left: 0;
+  }
+  .heading{
+  display: block;
+}
+}
+
+@media screen and (max-width: 501px) {
+   .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .name{
+    display: none;
+  }
+  .down{
+  border-bottom:none;
+}
+.heading{
+  display: block;
+}
+  .todos{
+    display: none;
+  }
+  .sidebar a {
+    float: left;
+   
+  }
+  div.content {
+    margin-left: 0;
+  }
 }
